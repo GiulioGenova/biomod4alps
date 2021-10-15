@@ -23,11 +23,11 @@ foreach(i = 1:length(spek), .packages = "raster") %dopar% {
  sc <- calc(s1, fun = mean, na.rm = TRUE)
  sd1 <- calc(s1, fun = sd, na.rm = TRUE)
 
- name1 <- paste0(spek[i],"current_mean.tif")
- name2 <- paste0(spek[i],"current_sd.tif")
+ name1 <- paste0(spek[i],"_current_mean.tif")
+ name2 <- paste0(spek[i],"_current_sd.tif")
 
- writeRaster(sc, paste0(out_dir, name1), overwrite=TRUE)
- writeRaster(sd1, paste0(out_dir, name2), overwrite=TRUE)
+ writeRaster(sc, name1, overwrite=TRUE)
+ writeRaster(sd1, name2, overwrite=TRUE)
 
 
  }
